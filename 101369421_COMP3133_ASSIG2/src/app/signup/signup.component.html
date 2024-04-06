@@ -1,0 +1,42 @@
+<div class="outer-container">
+  <div class="inner-container">
+    <div class="signup-container">
+      <h1>Sign Up</h1>
+      <div *ngIf="successMessage" class="success-message">Account successfully created, click <a routerLink="/">here</a> to log in!</div>
+      <div *ngIf="errorMessage" class="error-message"> {{errorMessage}}</div>
+      
+      
+      <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" formControlName="username" />
+          <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">
+            <!-- Show validation error message for username -->
+            <small class="error">Username is required.</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" />
+          <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+            <!-- Show validation error message for email -->
+            <small class="error">Email is required and must be a valid email address.</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" formControlName="password" />
+          <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+            <!-- Show validation error message for password -->
+            <small class="error">Password is required and must be at least 6 characters long.</small>
+          </div>
+        </div>
+        <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+      </form>
+
+      <div class="login-link">Already had an account? <a routerLink="/">Log In</a></div>
+
+      
+    </div>
+  </div>
+</div>

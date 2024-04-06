@@ -1,0 +1,33 @@
+
+<h1>Update Employee</h1>
+<div *ngIf="updatedEmployee" class="container">
+
+  <form (ngSubmit)="updateEmployee()" class="form">
+    <div class="form-group">
+      <label for="first_name" class="label">First Name</label>
+      <input id="first_name" [(ngModel)]="updatedEmployee.first_name" name="first_name" type="text" required class="input">
+    </div>
+    <div class="form-group">
+      <label for="last_name" class="label">Last Name</label>
+      <input id="last_name" [(ngModel)]="updatedEmployee.last_name" name="last_name" type="text" required class="input">
+    </div>
+    <div class="form-group">
+      <label for="email" class="label">Email</label>
+      <input id="email" [(ngModel)]="updatedEmployee.email" name="email" type="email" required class="input">
+    </div>
+    <div class="form-group">
+      <label for="gender" class="label">Gender</label>
+      <select id="gender" [(ngModel)]="updatedEmployee.gender" name="gender" required class="input">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="salary" class="label">Salary</label>
+      <input id="salary" [(ngModel)]="updatedEmployee.salary" name="salary" type="number" required class="input">
+    </div>
+    <button type="submit" class="button">Update Employee</button>
+    <button class="button cancel" (click)="goBack()">Cancel</button>
+  </form>
+</div>

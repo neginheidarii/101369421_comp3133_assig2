@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start;
+  padding: 10px 50px 0px 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.employee-table {
+  width: 50%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.employee-table th,
+.employee-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.employee-table th {
+  background-color: palevioletred;
+  color: white;
+}
+
+.employee-table tbody tr:hover {
+  background-color: rgb(252, 221, 226);
+}
+
+.employee-table td:last-child {
+  text-align: center;
+}
+
+.employee-table button {
+  cursor: pointer;
+  margin-right: 5px;
+  padding: 6px 12px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+.employee-table button:hover {
+  background-color: palevioletred; 
+}
+
+.success-message {
+  background-color: green;
+  margin: 0 auto;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  width: 50%;
+}
+
+.error-message {
+  background-color: #f44336;
+  margin: 0 auto;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  width: 50%;
+}
+
+.logout-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.logout-container button {
+  cursor: pointer;
+  padding: 6px 12px;
+  background-color: palevioletred;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+.logout-container button:hover {
+  background-color: #d01b38;
+}
+
+
+.add-button {
+  margin-top: 10px; 
+  background-color: black; 
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  width: 10%;
+  padding: 5px;
+  align-self:center;
+}
+
+.add-button:hover {
+  background-color: palevioletred; 
+}

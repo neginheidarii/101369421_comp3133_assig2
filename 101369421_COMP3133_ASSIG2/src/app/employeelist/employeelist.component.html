@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="logout-container">
+    <button (click)="logout()">Logout</button>
+  </div>
+  
+  <h1>Employee List</h1>
+  <button class="add-button" (click)="addEmployee()">Add Employee</button>
+
+  <div *ngIf="showSuccessMessage || showErrorMessage" class="alert" [ngClass]="{'success-message': showSuccessMessage, 'error-message': showErrorMessage}">
+      {{ successMessage || errorMessage }}
+    </div>
+  <br>
+  <!-- Display employee list in a table -->
+  <table class="employee-table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.first_name }}</td>
+        <td>{{ employee.last_name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>
+          <button (click)="viewEmployee(employee._id)">View</button>
+          <button (click)="updateEmployee(employee._id)">Update</button>
+          <button (click)="deleteEmployee(employee._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
+

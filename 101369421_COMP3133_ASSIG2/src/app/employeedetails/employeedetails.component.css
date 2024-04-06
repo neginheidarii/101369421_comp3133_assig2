@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+  }
+
+.employee-details-container {
+    margin: auto;
+    max-width: 360px;
+    padding: 20px;
+    background-color: rgb(235, 188, 204);
+    border-radius: 5px;
+  }
+  
+  .employee-details-container h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .employee-details-container p {
+    text-align: center;
+  }
+  
+  .back-button {
+    width: 400px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: palevioletred;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .back-button:hover {
+    background-color: black;
+  }
+  
