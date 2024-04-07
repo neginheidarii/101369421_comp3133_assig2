@@ -1,0 +1,71 @@
+<div class="bg-[#8E8FFA] min-h-screen flex justify-center items-center">
+  <div class="bg-white rounded-lg shadow-lg p-8">
+    <div class="flex justify-between mb-4">
+      <h1 class="text-2xl font-bold text-[#7752FE]">Employee List</h1>
+      <div>
+        <button
+          class="add-button bg-black text-white px-4 py-2 mr-4 rounded-md shadow-md"
+          (click)="addEmployee()"
+        >
+          Add Employee
+        </button>
+
+        <button
+          class="logout-button bg-red-500 text-white px-4 py-2 rounded-md shadow-md "
+          (click)="logout()"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+    <div
+      *ngIf="showSuccessMessage || showErrorMessage"
+      class="alert"
+      [ngClass]="{
+        'success-message': showSuccessMessage,
+        'error-message': showErrorMessage
+      }"
+    >
+      {{ successMessage || errorMessage }}
+    </div>
+
+    <!-- Display employee list in a table -->
+    <table class="employee-table w-full border-collapse border">
+      <thead class="bg-[#7752FE] text-white">
+        <tr>
+          <th class="px-4 py-2 border">First Name</th>
+          <th class="px-4 py-2 border">Last Name</th>
+          <th class="px-4 py-2 border">Email</th>
+          <th class="px-4 py-2 border">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td class="px-4 py-2 border">{{ employee.first_name }}</td>
+          <td class="px-4 py-2 border">{{ employee.last_name }}</td>
+          <td class="px-4 py-2 border">{{ employee.email }}</td>
+          <td class="px-4 py-2 border">
+            <button
+              class="view-button bg-black text-white px-2 py-1 rounded-md shadow-md mr-2 mb-2"
+              (click)="viewEmployee(employee._id)"
+            >
+              View
+            </button>
+            <button
+              class="update-button bg-[#7752FE] text-white px-2 py-1 rounded-md shadow-md mr-2 mb-2"
+              (click)="updateEmployee(employee._id)"
+            >
+              Update
+            </button>
+            <button
+              class="delete-button bg-red-500 text-white px-2 py-1 rounded-md shadow-md mb-2"
+              (click)="deleteEmployee(employee._id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

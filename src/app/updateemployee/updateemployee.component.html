@@ -1,0 +1,52 @@
+<div class="bg-[#8E8FFA] min-h-screen flex justify-center items-center">
+  <div class="bg-white rounded-lg shadow-lg p-8 w-[500px] ">
+    <h1 class="text-2xl font-bold mb-4 text-[#7752FE]">Update Employee</h1>
+    <div *ngIf="updatedEmployee" class="container">
+      <form (ngSubmit)="updateEmployee()" class="form border">
+        <table class="w-full border-collapse border bg-white rounded-lg overflow-hidden">
+          <tbody>
+            <tr>
+              <td class="px-4 py-2 border font-bold bg-white">First Name</td>
+              <td class="px-4 py-2 border">
+                <input id="first_name" [(ngModel)]="updatedEmployee.first_name" name="first_name" type="text" required class="input w-full">
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border font-bold bg-white">Last Name</td>
+              <td class="px-4 py-2 border">
+                <input id="last_name" [(ngModel)]="updatedEmployee.last_name" name="last_name" type="text" required class="input w-full">
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border font-bold bg-white">Email</td>
+              <td class="px-4 py-2 border">
+                <input id="email" [(ngModel)]="updatedEmployee.email" name="email" type="email" required class="input w-full">
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border font-bold bg-white">Gender</td>
+              <td class="px-4 py-2 border">
+                <select id="gender" [(ngModel)]="updatedEmployee.gender" name="gender" required class="input w-full">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </td>
+            </tr>
+            <tr> 
+              <td class="px-4 py-2 border font-bold bg-white">Salary</td>
+              <td class="px-4 py-2 border">
+                <input id="salary" [(ngModel)]="updatedEmployee.salary" name="salary" type="number" required class="input w-full">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </form>
+      <div class="flex justify-end mt-4">
+          <button type="submit" class="button bg-[#7752FE] text-white px-4 py-2 rounded-md shadow-md mr-2">Update Employee</button>
+          <button class="button cancel bg-black text-white px-4 py-2 rounded-md shadow-md" (click)="goBack()">Cancel</button>
+        </div>
+    </div>
+  </div>
+</div>
