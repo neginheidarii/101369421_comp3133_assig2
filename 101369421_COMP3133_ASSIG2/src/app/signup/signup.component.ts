@@ -39,27 +39,27 @@ export class SignupComponent {
     if (this.signupForm.valid) {
       console.log('valid');
       const { username, email, password } = this.signupForm.value;
+      console.log(this.signupForm.value);
       this.apollo
         .mutate<{ signup: User }>({
           mutation: SIGNUP,
           variables: {
             username,
             email,
-            password
-          }
-        })
-        .subscribe(
-          result => {
-    
-            console.log('Signup success:', result);
-            this.successMessage = 'Signup successful!'; 
+            password,
           },
-          error => {
-            
-            console.error('Signup error:', error);
-            this.errorMessage = error.message;
-          }
-        );
+        })
+        .subscribe({
+          next: ({ data }) => {
+            console.log(data);
+            this.successMessage = 'Signup successful. Please login to continue';
+            this.router.navigate(['/login']);
+          },
+          error: (error) => {
+            console.log(error);
+            this.errorMessage = 'Email already exists';
+          },
+        })
     } else {
       this.errorMessage = "Internal error";
     }

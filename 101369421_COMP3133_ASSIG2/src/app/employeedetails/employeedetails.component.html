@@ -1,11 +1,13 @@
-<h1>Employee Details</h1>
-<div class="employee-details-container" *ngIf="employee">
-  
-  <p><strong>First Name:</strong> {{ employee.first_name }}</p>
-  <p><strong>Last Name:</strong> {{ employee.last_name }}</p>
-  <p><strong>Email:</strong> {{ employee.email }}</p>
-  <p><strong>Gender:</strong> {{ employee.gender }}</p>
-  <p><strong>Salary:</strong> ${{ employee.salary }}</p>
-  
+<div class="bg-[#8E8FFA] min-h-screen flex justify-center items-center">
+  <div class="bg-white rounded-lg shadow-lg p-8 w-[500px]">
+    <h1 class="text-2xl font-bold mb-4 text-[#7752FE]">Employee Details</h1>
+    <div class="employee-details-container space-y-2" *ngIf="employee">
+      <p><strong>First Name:</strong> {{ employee.first_name }}</p>
+      <p><strong>Last Name:</strong> {{ employee.last_name }}</p>
+      <p><strong>Email:</strong> {{ employee.email }}</p>
+      <p><strong>Gender:</strong> {{ employee.gender }}</p>
+      <p><strong>Salary:</strong> ${{ employee.salary }}</p>
+    </div>
+    <button class="back-button bg-black text-white px-4 py-2 rounded-md shadow-md mt-4" (click)="goBack()">Back to Employee List</button>
+  </div>
 </div>
-<button class="back-button" (click)="goBack()">Back to Employee List</button>
