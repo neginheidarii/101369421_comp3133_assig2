@@ -2,7 +2,7 @@
   <div class="bg-white rounded-lg shadow-lg p-8 w-[500px] ">
     <h1 class="text-2xl font-bold mb-4 text-[#7752FE]">Update Employee</h1>
     <div *ngIf="updatedEmployee" class="container">
-      <form  class="form border">
+      <form (ngSubmit)="updateEmployee()" class="form border">
         <table class="w-full border-collapse border bg-white rounded-lg overflow-hidden">
           <tbody>
             <tr>
@@ -42,7 +42,7 @@
           </tbody>
         </table>
         <div class="flex justify-end mt-4">
-          <button type="submit" class="button bg-[#7752FE] text-white px-4 py-2 rounded-md shadow-md mr-2" (ngSubmit)="updateEmployee()">Update Employee</button>
+          <button type="submit" class="button bg-[#7752FE] text-white px-4 py-2 rounded-md shadow-md mr-2">Update Employee</button>
           <button class="button cancel bg-black text-white px-4 py-2 rounded-md shadow-md" (click)="goBack()">Cancel</button>
       </div>
       </form>
